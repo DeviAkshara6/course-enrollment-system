@@ -39,13 +39,23 @@ const createCourse = async (req, res) => {
         }
 
         // Create course
-        const course = await Course.create({
-            name,
-            description,
-            instructor,
-            capacity,
-            status: "ACTIVE"
-        });
+        const existingCourse = await Course.findOne({
+    name: name.trim()
+});
+
+if (existingCourse) {
+    return res.status(409).json({
+        message: "A course with this name already exists"
+    });
+}
+
+const course = await Course.create({
+    name: name.trim(),
+    description,
+    instructor,
+    capacity,
+    status: "ACTIVE"
+});
 
         res.status(201).json({
             message: "Course created successfully",
