@@ -67,3 +67,37 @@ Password: admin123
 npm install
 
 npm run dev
+
+## Postman Collection
+
+The Postman collection is included in this repository for testing the Course Enrollment System APIs.
+
+It contains requests covering:
+
+* User registration and login
+* Admin login
+* Viewing active courses
+* Creating, updating and deactivating courses
+* Student enrollment
+* Viewing student enrollments
+* Dropping courses
+* Admin enrollment management
+* Duplicate enrollment failure
+* Duplicate course creation failure
+* Unauthorized access
+* Invalid login and authentication failures
+
+### How to Use
+
+1. Open Postman.
+2. Click **Import**.
+3. Select the file:
+
+`postman/Course-Enrollment-System.postman_collection.json`
+
+4. Import the collection.
+5. Start the Node.js server using:
+
+`npm run dev`
+
+6. Run the requests from the collection.
